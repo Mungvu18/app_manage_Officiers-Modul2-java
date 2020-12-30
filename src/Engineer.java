@@ -6,10 +6,10 @@ public class Engineer extends Officers{
         this.majors = majors;
     }
 
-    @Override
-    public String toString() {
-        return "Engineer{" +
-                "majors='" + majors + '\'' +
+
+    public String getEngineerToString() {
+        return super.toString()+
+                " majors='" + majors + '\'' +
                 '}';
     }
 }

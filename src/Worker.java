@@ -6,8 +6,8 @@ public class Worker extends Officers{
         this.level = level;
     }
 
-    @Override
-    public String toString() {
+
+    public String getWorkerToString() {
         return super.toString() +" level " + level;
     }
 }

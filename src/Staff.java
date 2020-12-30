@@ -5,8 +5,8 @@ public class Staff extends Officers{
         this.job = job;
     }
 
-    @Override
-    public String toString() {
+
+    public String getStaffToString() {
         return super.toString() + " Job " + job;
     }
 }

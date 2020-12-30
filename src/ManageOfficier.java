@@ -6,17 +6,37 @@ public class ManageOfficier{
     public void addOfficers(Officers officer){
         officersList.add(officer);
     }
+    public void showAll(){
+        for (int i = 0; i < officersList.size(); i++) {
+            Officers officers = officersList.get(i);
+            disPlayByCaste(officers);
+        }
+    }
     public void findByName(String name){
         boolean testName = false;
         for (int i = 0; i < officersList.size(); i++) {
             Officers officers = officersList.get(i);
             testName = officers.getName().equalsIgnoreCase(name);
-            if(testName){
-                System.out.println(officers);
+            if(testName) {
+                disPlayByCaste(officers);
+                break;
             }
         }
         if(!testName) {
             System.err.println(NOT_EXITS);
+        }
+    }
+
+    private void disPlayByCaste(Officers officers) {
+        if (officers instanceof Staff) {
+            Staff staff = (Staff) officers;
+            System.out.println(staff.getStaffToString());
+        } else if(officers instanceof Engineer){
+            Engineer engineer = (Engineer) officers;
+            System.out.println(engineer.getEngineerToString());
+        } else if(officers instanceof Worker){
+            Worker worker = (Worker) officers;
+            System.out.println(worker.getWorkerToString());
         }
     }
 }
